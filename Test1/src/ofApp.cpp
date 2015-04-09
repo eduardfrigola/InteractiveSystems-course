@@ -2,15 +2,16 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    
     buttonWidth=200;
     buttonHeight=100;
     
     buttonPosition.x=ofGetWidth()/2-buttonWidth/2;
-    buttonPosition.y=ofGetHeight()/2-buttonHeight/2;
+    buttonPosition.y=ofGetHeight()/1.15-buttonHeight/2;
     
     buttonColor.r=0;
     buttonColor.g=0;
-    buttonColor.b=0;
+    buttonColor.b=100;
     
     bikerOrigin=ofPoint(ofGetWidth()/2, ofGetHeight()/2);
     kneeLPosition=ofPoint(bikerOrigin.x+70,bikerOrigin.y);
@@ -70,7 +71,13 @@ void ofApp::draw(){
     ofRect(buttonPosition.x, buttonPosition.y, buttonWidth, buttonHeight);
     ofPopStyle();*/
     
+    
     ofSetLineWidth(12);
+    
+    //floor
+    ofRect( 0, 550, ofGetWidth(),10);
+
+    
     
     //head
     ofCircle(bikerOrigin.x, bikerOrigin.y-300, 30);
@@ -118,6 +125,10 @@ void ofApp::draw(){
     ofRect(pedalRPosition.x-10, pedalRPosition.y-2.5, 20, 5);
 
     
+    //draw button
+    ofSetColor(buttonColor);
+    ofRect(buttonPosition,buttonWidth,buttonHeight);
+    
     
     
 }
@@ -144,9 +155,11 @@ void ofApp::mouseDragged(int x, int y, int button){
 }
 
 //--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
-    if(ofInRange(mousePosition.x, buttonPosition.x, buttonPosition.y+buttonWidth)&&ofInRange(mousePosition.y, buttonPosition.y, buttonPosition.x+buttonHeight)){
-        buttonColor=ofColor(0,255,0);
+void ofApp::mousePressed(int x, int y, int button)
+{
+    if(ofInRange(x, buttonPosition.x, buttonPosition.x+buttonWidth) && ofInRange(y, buttonPosition.y, buttonPosition.y+buttonHeight))
+    {
+        buttonColor = ofColor(0,255,0);
     }
 }
 
