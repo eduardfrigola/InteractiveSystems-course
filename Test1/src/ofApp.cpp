@@ -2,7 +2,6 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    //cout << "SETUP" << endl;
     buttonWidth=200;
     buttonHeight=100;
     
@@ -16,13 +15,10 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    //cout << "UPDATE" << endl;
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    //cout << "DRAW" << endl;
-    
     ofSetColor(255, 255, 255);
     ofRect(100, 100, 100, 100);
     
@@ -78,9 +74,7 @@ void ofApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-    if(ofInRange(mousePosition.x, buttonPosition.x, buttonPosition.y+buttonWidth)&&ofInRange(mousePosition.y, buttonPosition.y, buttonPosition.x+buttonHeight)){
-        buttonColor=ofColor(0,0,255);
-    }
+
 }
 
 //--------------------------------------------------------------
