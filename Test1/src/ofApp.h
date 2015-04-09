@@ -26,5 +26,18 @@ class ofApp : public ofBaseApp{
     int buttonWidth;
     int buttonHeight;
     ofColor buttonColor;
+    
+    ofPoint bikerOrigin;
+    
+    ofPoint kneeLPosition;
+    ofPoint kneeRPosition;
+    
+    ofPoint pedalierCenter;
+    ofPoint pedalLPosition;
+    ofPoint pedalRPosition;
+    int pedalRadius;
+    float zerotopi;
+    
+    ofImage bike;
 		
 };
